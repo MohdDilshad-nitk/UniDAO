@@ -7,7 +7,7 @@ contract AutoSend {
     address public presetAddress;
     uint public lastActivityBlock;
 
-    constructor(address _presetAddress) {
+    constructor(address _presetAddress) payable {
         owner = msg.sender;
         presetAddress = _presetAddress;
         lastActivityBlock = block.number;
@@ -26,12 +26,16 @@ contract AutoSend {
         require(block.number - lastActivityBlock <= 10, "Owner hasn't called still_alive in the last 10 blocks");
     }
 
+    function getBalance() public view returns (uint) {
+        uint owner_balance = address(this).balance / 1 ether;
+        return owner_balance;
+    }
+
     function sendBalanceToPresetAddress() public {
-        require(block.number - lastActivityBlock > 10, "Owner is still active.");
-        uint balanceToSend = address(this).balance;
-        require(balanceToSend > 0, "No balance to send.");
-        (bool success,) = presetAddress.call{value: balanceToSend}("");
-        require(success, "Transfer failed.");
+        require(block.number - lastActivityBlock > 10, "Owner is still active.");       
+        
+        address payable receiver = payable(presetAddress);
+        selfdestruct(receiver);
     }
 
     
