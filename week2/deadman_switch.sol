@@ -26,10 +26,6 @@ contract AutoSend {
         require(block.number - lastActivityBlock <= 10, "Owner hasn't called still_alive in the last 10 blocks");
     }
 
-    function getBalance() public view returns (uint) {
-        uint owner_balance = address(this).balance / 1 ether;
-        return owner_balance;
-    }
 
     function sendBalanceToPresetAddress() public {
         require(block.number - lastActivityBlock > 10, "Owner is still active.");       
