@@ -12,5 +12,6 @@ Link to transaction : https://sepolia.etherscan.io/tx/0xafd4cce969647ff7dd67fa1d
 <img width="634" alt="image" src="https://github.com/MohdDilshad-nitk/UniDAO/assets/97335106/dd8fff0c-7983-4610-916e-0f385c997c3f">
 
 ## Deployed Contract Link
-https://sepolia.etherscan.io/tx/0x2aaa84d044eea72d12136fd0adb7ede6dc48f59db03b13536b5e99060c48cf34
+( Destructed ) https://sepolia.etherscan.io/tx/0x2aaa84d044eea72d12136fd0adb7ede6dc48f59db03b13536b5e99060c48cf34
+( Live ) https://sepolia.etherscan.io/tx/0x1a870809774af7b722fd63e774e20fdd6e10d4633f2046296c42e39dc1925c48
 
